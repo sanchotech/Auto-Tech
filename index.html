@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#05070d">
+  <meta name="description" content="Sancho AutoTech - Professional vehicle diagnostics, servicing, repairs and automotive solutions in Zimbabwe.">
+  <meta name="author" content="Sancho Tech">
+
+  <title>Sancho AutoTech | Vehicle Repairs & Diagnostics</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --black: #05070d;
+      --black2: #080c14;
+      --card: #0d1422;
+      --card2: #111a2b;
+      --blue: #1464ff;
+      --blue2: #1687ff;
+      --yellow: #ffd600;
+      --cyan: #00d9ff;
+      --white: #ffffff;
+      --muted: #aab4c5;
+      --border: rgba(255,255,255,.09);
+      --success: #20d889;
+      --danger: #ff4f5e;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(20,100,255,.14), transparent 30%),
+        radial-gradient(circle at 90% 30%, rgba(255,214,0,.08), transparent 25%),
+        var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5,7,13,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--yellow), #fff176);
+      box-shadow: 0 0 25px rgba(255,214,0,.22);
+    }
+
+    .logo span {
+      color: var(--yellow);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    nav a {
+      color: #dce4f2;
+      font-size: .92rem;
+      font-weight: 600;
+      transition: .25s;
+    }
+
+    nav a:hover {
+      color: var(--yellow);
+    }
+
+    .nav-btn {
+      padding: 11px 17px;
+      background: var(--blue);
+      border-radius: 10px;
+      color: white !important;
+    }
+
+    .nav-btn:hover {
+      background: var(--blue2);
+      transform: translateY(-2px);
+    }
+
+    .menu {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: var(--blue);
+      opacity: .08;
+      filter: blur(100px);
+      border-radius: 50%;
+      right: -150px;
+      top: 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid rgba(255,214,0,.3);
+      background: rgba(255,214,0,.07);
+      border-radius: 999px;
+      color: var(--yellow);
+      font-size: .82rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .badge i {
+      font-size: .65rem;
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.6rem, 6vw, 5.3rem);
+      line-height: .98;
+      letter-spacing: -3px;
+      margin-bottom: 23px;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 20px;
+      border-radius: 11px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue2);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(20,100,255,.25);
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: var(--black);
+      border-color: var(--yellow);
+    }
+
+    .btn-yellow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255,214,0,.2);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,.03);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue2);
+    }
+
+    .hero-card {
+      position: relative;
+      background: linear-gradient(145deg, rgba(20,100,255,.18), rgba(13,20,34,.9));
+      border: 1px solid rgba(20,100,255,.25);
+      border-radius: 28px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-car {
+      height: 390px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, transparent 45%, rgba(0,0,0,.8)),
+        url("https://commons.wikimedia.org/wiki/Special:Redirect/file/2020_Toyota_HiAce_(front).jpg")
+        center/cover no-repeat;
+    }
+
+    .hero-car-info {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+    }
+
+    .hero-car-info small {
+      color: var(--yellow);
+      font-weight: 700;
+    }
+
+    .hero-car-info h3 {
+      font-size: 1.45rem;
+      margin-top: 4px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .stat {
+      padding: 13px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 1.15rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .7rem;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: var(--yellow);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem,4vw,3.3rem);
+      line-height: 1.05;
+      margin-bottom: 15px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 25px;
+      background: linear-gradient(145deg,var(--card),#090e18);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      transition: .25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(20,100,255,.5);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      background: rgba(20,100,255,.12);
+      color: var(--blue2);
+      border-radius: 13px;
+      font-size: 1.25rem;
+      margin-bottom: 18px;
+    }
+
+    .service-card:nth-child(2n) .service-icon {
+      background: rgba(255,214,0,.1);
+      color: var(--yellow);
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.03rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    /* =========================
+       PRICES
+    ========================= */
+
+    .price-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th,
+    td {
+      padding: 17px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: rgba(20,100,255,.1);
+      color: var(--yellow);
+      font-size: .83rem;
+      text-transform: uppercase;
+    }
+
+    td {
+      color: #dce4ef;
+      font-size: .9rem;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .price {
+      color: var(--yellow);
+      font-weight: 800;
+    }
+
+    .notice {
+      margin-top: 15px;
+      padding: 14px 17px;
+      background: rgba(255,214,0,.06);
+      border: 1px solid rgba(255,214,0,.15);
+      border-radius: 12px;
+      color: #d9dce4;
+      font-size: .84rem;
+    }
+
+    /* =========================
+       VEHICLES
+    ========================= */
+
+    .vehicles-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 17px;
+    }
+
+    .vehicle-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .vehicle-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,214,0,.35);
+    }
+
+    .vehicle-photo {
+      height: 185px;
+      background: #111827;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vehicle-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .vehicle-card:hover .vehicle-photo img {
+      transform: scale(1.05);
+    }
+
+    .vehicle-body {
+      padding: 17px;
+    }
+
+    .vehicle-body h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .vehicle-body p {
+      color: var(--muted);
+      font-size: .77rem;
+    }
+
+    .vehicle-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: rgba(20,100,255,.12);
+      color: var(--blue2);
+      font-size: .68rem;
+      font-weight: 700;
+    }
+
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .process-card {
+      position: relative;
+      padding: 28px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 18px;
+    }
+
+    .process-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: var(--yellow);
+      color: var(--black);
+      border-radius: 50%;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    /* =========================
+       WHY US
+    ========================= */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .why-card {
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .why-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .check {
+      min-width: 31px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(32,216,137,.1);
+      color: var(--success);
+    }
+
+    .why-item h4 {
+      margin-bottom: 2px;
+    }
+
+    .why-item p {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote-section {
+      background:
+        linear-gradient(90deg,rgba(20,100,255,.09),transparent),
+        var(--black2);
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 13px;
+    }
+
+    .contact-box i {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      color: var(--yellow);
+      background: rgba(255,214,0,.08);
+      border-radius: 10px;
+    }
+
+    .contact-box small {
+      color: var(--muted);
+      display: block;
+      font-size: .7rem;
+    }
+
+    .contact-box strong {
+      font-size: .88rem;
+    }
+
+    .quote-form {
+      padding: 28px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1/-1;
+    }
+
+    .field label {
+      color: #dfe6f2;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #080d16;
+      color: white;
+      outline: none;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .quote-form .btn {
+      margin-top: 17px;
+      width: 100%;
+    }
+
+    /* =========================
+       SOCIAL
+    ========================= */
+
+    .social-section {
+      text-align: center;
+    }
+
+    .social-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .social {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      font-size: 1.15rem;
+      transition: .25s;
+    }
+
+    .social:hover {
+      transform: translateY(-4px);
+      color: var(--yellow);
+      border-color: var(--yellow);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 0 95px;
+      background: #03050a;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr .7fr;
+      gap: 30px;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      font-size: .82rem;
+      max-width: 450px;
+      margin-top: 13px;
+    }
+
+    .footer-title {
+      color: var(--yellow);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .credit {
+      text-align: center;
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: #7e899a;
+      font-size: .78rem;
+    }
+
+    .credit strong {
+      color: var(--yellow);
+    }
+
+    /* =========================
+       FLOATING BUTTONS
+    ========================= */
+
+    .floating {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      display: grid;
+      gap: 10px;
+    }
+
+    .float-btn {
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,.3);
+      transition: .25s;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp {
+      background: #25d366;
+    }
+
+    .call {
+      background: var(--blue);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:1050px) {
+      .services-grid,
+      .vehicles-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .hero-grid,
+      .quote-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero-card {
+        max-width: 700px;
+        margin: auto;
+      }
+    }
+
+    @media(max-width:760px) {
+      section {
+        padding: 70px 0;
+      }
+
+      nav {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 20px;
+        background: rgba(5,7,13,.98);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-car {
+        height: 300px;
+      }
+
+      .why-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+    }
+
+    @media(max-width:520px) {
+      .services-grid,
+      .vehicles-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        display: grid;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-card {
+        padding: 10px;
+      }
+
+      .hero-car {
+        height: 260px;
+      }
+
+      .quote-form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+  <div class="container nav">
+
+    <a href="#home" class="logo">
+      <div class="logo-icon">
+        <i class="fa-solid fa-car-side"></i>
+      </div>
+      Sancho <span>AutoTech</span>
+    </a>
+
+    <button class="menu" id="menuBtn" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#prices">Prices</a>
+      <a href="#vehicles">Vehicles</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+      <a href="#quote" class="nav-btn">Get Quote</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main id="home">
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="badge">
+        <i class="fa-solid fa-circle"></i>
+        AUTOMOTIVE DIAGNOSTICS & REPAIR
+      </div>
+
+      <h1>
+        Smart Repairs.<br>
+        <span>Better Performance.</span>
+      </h1>
+
+      <p>
+        Sancho AutoTech provides professional vehicle diagnostics,
+        servicing, electrical repairs, mechanical repairs and automotive
+        solutions for drivers in Zimbabwe.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#quote" class="btn btn-yellow">
+          <i class="fa-solid fa-file-invoice"></i>
+          Request a Quote
+        </a>
+
+        <a href="tel:+263780527843" class="btn btn-primary">
+          <i class="fa-solid fa-phone"></i>
+          Call +263 780 527 843
+        </a>
+
+        <a href="https://wa.me/263780527843" class="btn btn-outline" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+
+      <div class="hero-car">
+        <div class="hero-car-info">
+          <small>FEATURED VEHICLE</small>
+          <h3>Toyota Hiace</h3>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>OBD</strong>
+          <span>Diagnostics</span>
+        </div>
+
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>Quote Requests</span>
+        </div>
+
+        <div class="stat">
+          <strong>ZW</strong>
+          <span>Zimbabwe Focused</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-label">Our Services</div>
+      <h2>Complete Automotive Solutions</h2>
+      <p>
+        From routine maintenance to complex diagnostics and repairs,
+        we help keep your vehicle reliable and road-ready.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h3>Computer Diagnostics</h3>
+        <p>OBD scanning, fault-code diagnosis and vehicle system checks.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-oil-can"></i>
+        </div>
+        <h3>Oil & Filter Service</h3>
+        <p>Engine oil, oil filters, air filters and routine maintenance.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-car-burst"></i>
+        </div>
+        <h3>Brake Repairs</h3>
+        <p>Brake pads, discs, inspection and brake-system diagnosis.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-battery-half"></i>
+        </div>
+        <h3>Auto Electrical</h3>
+        <p>Battery, starter, alternator, wiring and electrical diagnosis.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-gears"></i>
+        </div>
+        <h3>Suspension</h3>
+        <p>Shock absorbers, bushes, control arms and suspension checks.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-engine"></i>
+        </div>
+        <h3>Engine Repairs</h3>
+        <p>Engine diagnosis, tune-ups and mechanical repair services.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <h3>Air Conditioning</h3>
+        <p>Vehicle AC diagnosis, cooling checks and AC-related repairs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fa-solid fa-car"></i>
+        </div>
+        <h3>Pre-Purchase Inspection</h3>
+        <p>Vehicle condition checks before buying a used vehicle.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     PRICES
+========================= -->
+
+<section id="prices">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-label">Indicative Pricing</div>
+      <h2>Common Service Prices</h2>
+      <p>
+        Starting prices for common automotive services.
+        Final pricing depends on the vehicle, parts and required work.
+      </p>
+    </div>
+
+    <div class="price-wrap">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Indicative Price</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Basic Inspection</td>
+            <td class="price">US$10–20</td>
+            <td>Initial vehicle inspection</td>
+          </tr>
+
+          <tr>
+            <td>Computer Diagnostics</td>
+            <td class="price">US$20–35</td>
+            <td>OBD/system scan</td>
+          </tr>
+
+          <tr>
+            <td>Oil & Filter Service</td>
+            <td class="price">US$35+</td>
+            <td>Depending on oil/parts</td>
+          </tr>
+
+          <tr>
+            <td>Brake Pad Labour</td>
+            <td class="price">US$25–50 / axle</td>
+            <td>Labour only</td>
+          </tr>
+
+          <tr>
+            <td>Brake Disc Service</td>
+            <td class="price">US$40+</td>
+            <td>Depending on vehicle</td>
+          </tr>
+
+          <tr>
+            <td>Wheel Alignment</td>
+            <td class="price">US$15–30</td>
+            <td>Vehicle dependent</td>
+          </tr>
+
+          <tr>
+            <td>Wheel Balancing</td>
+            <td class="price">US$15+</td>
+            <td>Depending on wheels</td>
+          </tr>
+
+          <tr>
+            <td>Battery Diagnosis</td>
+            <td class="price">US$10–20</td>
+            <td>Battery/charging check</td>
+          </tr>
+
+          <tr>
+            <td>Alternator Repair</td>
+            <td class="price">US$40+</td>
+            <td>Parts extra</td>
+          </tr>
+
+          <tr>
+            <td>Starter Motor Repair</td>
+            <td class="price">US$40+</td>
+            <td>Parts extra</td>
+          </tr>
+
+          <tr>
+            <td>Suspension Inspection</td>
+            <td class="price">US$15–25</td>
+            <td>Inspection</td>
+          </tr>
+
+          <tr>
+            <td>Shock Replacement Labour</td>
+            <td class="price">US$40+</td>
+            <td>Labour only</td>
+          </tr>
+
+          <tr>
+            <td>Control Arm / Bush Labour</td>
+            <td class="price">US$30+</td>
+            <td>Vehicle dependent</td>
+          </tr>
+
+          <tr>
+            <td>Clutch Labour</td>
+            <td class="price">US$80+</td>
+            <td>Parts extra</td>
+          </tr>
+
+          <tr>
+            <td>Cooling System Diagnosis</td>
+            <td class="price">US$20–40</td>
+            <td>Diagnosis</td>
+          </tr>
+
+          <tr>
+            <td>Thermostat Replacement</td>
+            <td class="price">US$25+</td>
+            <td>Parts dependent</td>
+          </tr>
+
+          <tr>
+            <td>Radiator Repair / Replacement</td>
+            <td class="price">US$40+</td>
+            <td>Parts extra</td>
+          </tr>
+
+          <tr>
+            <td>Engine Tune-Up</td>
+            <td class="price">US$30+</td>
+            <td>Vehicle dependent</td>
+          </tr>
+
+          <tr>
+            <td>Major Engine Repair</td>
+            <td class="price">Quote</td>
+            <td>Inspection required</td>
+          </tr>
+
+          <tr>
+            <td>AC Diagnosis</td>
+            <td class="price">US$20+</td>
+            <td>Repair/refrigerant extra</td>
+          </tr>
+
+          <tr>
+            <td>Pre-Purchase Inspection</td>
+            <td class="price">US$30+</td>
+            <td>Vehicle inspection</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="notice">
+      <i class="fa-solid fa-circle-info"></i>
+      Prices shown are indicative starting prices and are not fixed
+      Zimbabwe-wide rates. Parts, vehicle model, labour complexity and
+      required repairs can change the final quotation.
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     VEHICLES
+========================= -->
+
+<section id="vehicles">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-label">Vehicles</div>
+      <h2>Vehicles We Commonly Work On</h2>
+      <p>
+        We support a wide range of Japanese vehicles, family cars,
+        pickups and commercial vans.
+      </p>
+    </div>
+
+    <div class="vehicles-grid">
+
+      <!-- Toyota Aqua -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Toyota_Aqua_2021.jpg"
+            alt="Toyota Aqua"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Toyota Aqua</h3>
+          <p>Hybrid hatchback diagnostics and maintenance.</p>
+          <span class="vehicle-tag">HYBRID</span>
+        </div>
+      </div>
+
+      <!-- Honda Fit -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Honda_Fit_2020.jpg"
+            alt="Honda Fit"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Honda Fit</h3>
+          <p>Routine servicing, electrical and diagnostics.</p>
+          <span class="vehicle-tag">HATCHBACK</span>
+        </div>
+      </div>
+
+      <!-- Nissan Note -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nissan_Note_E12.jpg"
+            alt="Nissan Note"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Nissan Note</h3>
+          <p>Engine, electrical and diagnostic services.</p>
+          <span class="vehicle-tag">NISSAN</span>
+        </div>
+      </div>
+
+      <!-- Mazda Demio -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mazda2_2015.jpg"
+            alt="Mazda Demio"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Mazda Demio</h3>
+          <p>Maintenance, brakes, suspension and diagnostics.</p>
+          <span class="vehicle-tag">MAZDA</span>
+        </div>
+      </div>
+
+      <!-- Toyota Corolla -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Toyota_Corolla_2019.jpg"
+            alt="Toyota Corolla"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Toyota Corolla</h3>
+          <p>Full servicing and mechanical repairs.</p>
+          <span class="vehicle-tag">TOYOTA</span>
+        </div>
+      </div>
+
+      <!-- Toyota Probox -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/2018_Toyota_Probox_Van_DX_Comfort_in_White,_front_right.jpg"
+            alt="Toyota Probox"
+            loading="lazy">
+        </div>
+        <div class="vehicle-body">
+          <h3>Toyota Probox</h3>
+          <p>Commercial vehicle servicing and repairs.</p>
+          <span class="vehicle-tag">COMMERCIAL</span>
+        </div>
+      </div>
+
+      <!-- Toyota Hilux -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Toyota_Hilux_(1).jpg"
+            alt="Toyota Hilux"
+            loading="lazy">
+        </div>
+        <div class="vehicle-body">
+          <h3>Toyota Hilux</h3>
+          <p>Pickup servicing, suspension and engine repairs.</p>
+          <span class="vehicle-tag">PICKUP</span>
+        </div>
+      </div>
+
+      <!-- Toyota Hiace -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/2020_Toyota_HiAce_(front).jpg"
+            alt="Toyota Hiace"
+            loading="lazy">
+        </div>
+        <div class="vehicle-body">
+          <h3>Toyota Hiace</h3>
+          <p>Commercial van servicing and diagnostics.</p>
+          <span class="vehicle-tag">VAN</span>
+        </div>
+      </div>
+
+      <!-- Honda Vezel -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/0_Honda_Vezel_eHEV_3.jpg"
+            alt="Honda Vezel"
+            loading="lazy">
+        </div>
+        <div class="vehicle-body">
+          <h3>Honda Vezel</h3>
+          <p>Hybrid, engine, brake and electrical diagnostics.</p>
+          <span class="vehicle-tag">HYBRID</span>
+        </div>
+      </div>
+
+      <!-- Nissan X-Trail -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nissan_X-Trail_T32.jpg"
+            alt="Nissan X-Trail"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Nissan X-Trail</h3>
+          <p>Engine, CVT, suspension and diagnostics.</p>
+          <span class="vehicle-tag">SUV</span>
+        </div>
+      </div>
+
+      <!-- Toyota RAV4 -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/2019_Toyota_RAV4.jpg"
+            alt="Toyota RAV4"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Toyota RAV4</h3>
+          <p>4x4 servicing, diagnostics and mechanical repairs.</p>
+          <span class="vehicle-tag">SUV</span>
+        </div>
+      </div>
+
+      <!-- Mazda CX-5 -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mazda_CX-5_2017.jpg"
+            alt="Mazda CX-5"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Mazda CX-5</h3>
+          <p>Diesel/petrol diagnostics and maintenance.</p>
+          <span class="vehicle-tag">SUV</span>
+        </div>
+      </div>
+
+      <!-- Toyota Vitz -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/2017-2020_Toyota_Vitz_Hybrid_F.jpg"
+            alt="Toyota Vitz"
+            loading="lazy">
+        </div>
+        <div class="vehicle-body">
+          <h3>Toyota Vitz</h3>
+          <p>Service, diagnostics and electrical repairs.</p>
+          <span class="vehicle-tag">HATCHBACK</span>
+        </div>
+      </div>
+
+      <!-- Toyota Passo -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Toyota_Passo_2016.jpg"
+            alt="Toyota Passo"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Toyota Passo</h3>
+          <p>Small-car servicing and diagnostics.</p>
+          <span class="vehicle-tag">TOYOTA</span>
+        </div>
+      </div>
+
+      <!-- Toyota Prius -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Toyota_Prius_2016.jpg"
+            alt="Toyota Prius"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Toyota Prius</h3>
+          <p>Hybrid diagnostics and general maintenance.</p>
+          <span class="vehicle-tag">HYBRID</span>
+        </div>
+      </div>
+
+      <!-- Nissan Serena -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nissan_Serena_C27.jpg"
+            alt="Nissan Serena"
+            loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="vehicle-body">
+          <h3>Nissan Serena</h3>
+          <p>Family van diagnostics and servicing.</p>
+          <span class="vehicle-tag">MPV</span>
+        </div>
+      </div>
+
+      <!-- Nissan NV350 Caravan -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/2012-2017_Nissan_NV350_Caravan.jpg"
+            alt="Nissan NV350 Caravan"
+            loading="lazy">
+        </div>
+        <div class="vehicle-body">
+          <h3>Nissan NV350 Caravan</h3>
+          <p>Commercial van servicing, diagnostics and repairs.</p>
+          <span class="vehicle-tag">COMMERCIAL VAN</span>
+        </div>
+      </div>
+
+      <!-- Isuzu Como -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/ISUZU_COMO.jpg"
+            alt="Isuzu Como"
+            loading="lazy">
+        </div>
+        <div class="vehicle-body">
+          <h3>Isuzu Como</h3>
+          <p>Van diagnostics, servicing and mechanical repairs.</p>
+          <span class="vehicle-tag">ISUZU VAN</span>
+        </div>
+      </div>
+
+      <!-- Nissan Caravan ZD30 -->
+      <div class="vehicle-card">
+        <div class="vehicle-photo">
+          <img
+            src="https://zimcompass.ap-south-1.linodeobjects.com/zimcompass-product_5fa1639095692203756629.jpg"
+            alt="Nissan Caravan ZD30"
+            loading="lazy">
+        </div>
+        <div class="vehicle-body">
+          <h3>Nissan Caravan ZD30</h3>
+          <p>Diesel diagnostics, servicing and engine repairs.</p>
+          <span class="vehicle-tag">ZD30 DIESEL</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section id="process">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-label">How It Works</div>
+      <h2>Simple Repair Process</h2>
+      <p>
+        We keep the process straightforward so you know what is happening
+        with your vehicle.
+      </p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-card">
+        <div class="process-number">01</div>
+        <h3>Contact Us</h3>
+        <p>Call, WhatsApp or submit the online quote request.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-number">02</div>
+        <h3>Diagnose</h3>
+        <p>We inspect the vehicle and identify the likely problem.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-number">03</div>
+        <h3>Quote</h3>
+        <p>You receive an estimated repair and parts quotation.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-number">04</div>
+        <h3>Repair</h3>
+        <p>Approved work is completed and the vehicle is checked.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     WHY US
+========================= -->
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-label">Why Sancho AutoTech</div>
+      <h2>Technology Meets Automotive Repair</h2>
+      <p>
+        Our approach combines practical mechanical work with modern
+        diagnostic technology.
+      </p>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-list">
+
+          <div class="why-item">
+            <div class="check">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+              <h4>Diagnostic First</h4>
+              <p>We focus on identifying the problem before unnecessary parts replacement.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="check">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+              <h4>Modern Technology</h4>
+              <p>Computer diagnostics and electronic vehicle systems are part of our workflow.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="check">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+              <h4>Vehicle Variety</h4>
+              <p>We support passenger cars, hybrids, pickups and commercial vans.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="why-card">
+
+        <div class="why-list">
+
+          <div class="why-item">
+            <div class="check">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+              <h4>Transparent Estimates</h4>
+              <p>Customers can request a quotation before approving repair work.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="check">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+              <h4>Commercial Vehicle Support</h4>
+              <p>We include vans such as NV350 Caravan, Como and Caravan models.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="check">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+              <h4>Direct Communication</h4>
+              <p>Contact us directly by phone or WhatsApp for service enquiries.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     QUOTE
+========================= -->
+
+<section id="quote" class="quote-section">
+
+  <div class="container quote-grid">
+
+    <div>
+
+      <div class="section-label">Get a Quote</div>
+
+      <h2 style="font-family:'Space Grotesk';font-size:clamp(2rem,4vw,3.4rem);line-height:1.05;">
+        Tell us what your vehicle needs.
+      </h2>
+
+      <p style="color:var(--muted);margin-top:15px;">
+        Complete the form and your request will be prepared for WhatsApp.
+      </p>
+
+      <div class="contact-info">
+
+        <a href="tel:+263780527843" class="contact-box">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <small>CALL US</small>
+            <strong>+263 780 527 843</strong>
+          </div>
+        </a>
+
+        <a href="https://wa.me/263780527843" target="_blank" class="contact-box">
+          <i class="fa-brands fa-whatsapp"></i>
+          <div>
+            <small>WHATSAPP</small>
+            <strong>Chat with Sancho AutoTech</strong>
+          </div>
+        </a>
+
+        <div class="contact-box">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <small>LOCATION</small>
+            <strong>Zimbabwe</strong>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <form class="quote-form" id="quoteForm">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="name">Your Name</label>
+          <input id="name" type="text" placeholder="Enter your name" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="tel" placeholder="+263..." required>
+        </div>
+
+        <div class="field">
+          <label for="vehicle">Vehicle</label>
+          <select id="vehicle" required>
+            <option value="">Select vehicle</option>
+
+            <option>Toyota Aqua</option>
+            <option>Honda Fit</option>
+            <option>Nissan Note</option>
+            <option>Mazda Demio</option>
+            <option>Toyota Corolla</option>
+            <option>Toyota Probox</option>
+            <option>Toyota Hilux</option>
+            <option>Toyota Hiace</option>
+            <option>Honda Vezel</option>
+            <option>Nissan X-Trail</option>
+            <option>Toyota RAV4</option>
+            <option>Mazda CX-5</option>
+            <option>Toyota Vitz</option>
+            <option>Toyota Passo</option>
+            <option>Toyota Prius</option>
+            <option>Nissan Serena</option>
+            <option>Nissan NV350 Caravan</option>
+            <option>Isuzu Como</option>
+            <option>Nissan Caravan ZD30</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="year">Vehicle Year</label>
+          <input id="year" type="text" placeholder="e.g. 2015">
+        </div>
+
+        <div class="field">
+          <label for="service">Service Required</label>
+          <select id="service" required>
+            <option value="">Select service</option>
+            <option>Computer Diagnostics</option>
+            <option>Engine Repair</option>
+            <option>Oil & Filter Service</option>
+            <option>Brake Repair</option>
+            <option>Suspension Repair</option>
+            <option>Auto Electrical</option>
+            <option>Air Conditioning</option>
+            <option>Clutch Repair</option>
+            <option>Cooling System</option>
+            <option>Pre-Purchase Inspection</option>
+            <option>General Service</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="urgency">Urgency</label>
+          <select id="urgency">
+            <option>Normal</option>
+            <option>Urgent</option>
+            <option>Vehicle Not Starting</option>
+            <option>Vehicle Breakdown</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="message">Describe the Problem</label>
+          <textarea id="message"
+                    placeholder="Example: Engine is cranking but not starting..."></textarea>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-yellow">
+        <i class="fa-brands fa-whatsapp"></i>
+        Send Quote Request
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SOCIAL
+========================= -->
+
+<section class="social-section">
+
+  <div class="container">
+
+    <div class="section-head" style="margin-left:auto;margin-right:auto;">
+      <div class="section-label">Connect With Us</div>
+      <h2>Sancho AutoTech Online</h2>
+      <p>
+        Follow Sancho Tech and stay connected with our automotive and technology projects.
+      </p>
+    </div>
+
+    <div class="social-grid">
+
+      <a class="social"
+         href="https://www.facebook.com/profile.php?id=61574173235079"
+         target="_blank"
+         aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+
+      <a class="social"
+         href="https://www.tiktok.com/@sancho.tech.zw?_t=ZM-8v0aDyJMxXD&_r=1"
+         target="_blank"
+         aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+
+      <a class="social"
+         href="https://www.youtube.com/@SanchoTech"
+         target="_blank"
+         aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a class="social"
+         href="https://t.me/+K1qfbVnjNZBmYWRk"
+         target="_blank"
+         aria-label="Telegram">
+        <i class="fa-brands fa-telegram"></i>
+      </a>
+
+      <a class="social"
+         href="https://whatsapp.com/channel/0029Vb79rZA9mrGYIaF5273C"
+         target="_blank"
+         aria-label="WhatsApp Channel">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+
+      <a class="social"
+         href="https://www.instagram.com/sancho_tech_zw?stkn=MWU4Ynlybnd1ZWIyOQ=="
+         target="_blank"
+         aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer id="contact">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <a href="#home" class="logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-car-side"></i>
+          </div>
+          Sancho <span>AutoTech</span>
+        </a>
+
+        <p>
+          Professional automotive diagnostics, servicing and repairs.
+          Built with technology and designed for Zimbabwean motorists.
+        </p>
+
+      </div>
+
+      <div>
+        <div class="footer-title">Quick Links</div>
+
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#prices">Prices</a>
+          <a href="#vehicles">Vehicles</a>
+          <a href="#quote">Get a Quote</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title">Contact</div>
+
+        <div class="footer-links">
+          <a href="tel:+263780527843">
+            <i class="fa-solid fa-phone"></i>
+            +263 780 527 843
+          </a>
+
+          <a href="https://wa.me/263780527843" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            WhatsApp
+          </a>
+
+          <a href="https://www.youtube.com/@SanchoTech" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+            Sancho Tech
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="credit">
+      © <span id="year"></span> Sancho AutoTech.
+      All rights reserved.
+      <br>
+      <strong>Developed by Sancho Tech</strong>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     FLOATING BUTTONS
+========================= -->
+
+<div class="floating">
+
+  <a href="tel:+263780527843"
+     class="float-btn call"
+     aria-label="Call Sancho AutoTech">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+
+  <a href="https://wa.me/263780527843"
+     target="_blank"
+     class="float-btn whatsapp"
+     aria-label="WhatsApp Sancho AutoTech">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+  /* Mobile navigation */
+
+  const menuBtn = document.getElementById("menuBtn");
+  const navMenu = document.getElementById("navMenu");
+
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+
+    const icon = menuBtn.querySelector("i");
+
+    if (navMenu.classList.contains("active")) {
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-xmark");
+    } else {
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+    }
+  });
+
+
+  /* Close mobile menu after clicking link */
+
+  document.querySelectorAll("#navMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+
+      const icon = menuBtn.querySelector("i");
+
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+    });
+  });
+
+
+  /* Dynamic year */
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+
+  /* WhatsApp quote form */
+
+  const quoteForm = document.getElementById("quoteForm");
+
+  quoteForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const vehicle = document.getElementById("vehicle").value;
+    const year = document.getElementById("year").value.trim();
+    const service = document.getElementById("service").value;
+    const urgency = document.getElementById("urgency").value;
+    const message = document.getElementById("message").value.trim();
+
+    const text =
+`🚗 SANCHO AUTOTECH — QUOTE REQUEST
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+
+🚘 Vehicle: ${vehicle}
+📅 Year: ${year || "Not specified"}
+
+🔧 Service: ${service}
+⚠️ Urgency: ${urgency}
+
+📝 Problem:
+${message || "No additional details provided."}
+
+Please provide an estimated quotation.`;
+
+    const whatsappURL =
+      "https://wa.me/263780527843?text=" +
+      encodeURIComponent(text);
+
+    window.open(whatsappURL, "_blank");
+
+  });
+
+
+  /* Smooth image fallback */
+
+  document.querySelectorAll(".vehicle-photo img").forEach(img => {
+
+    img.addEventListener("error", function() {
+
+      this.style.display = "none";
+
+      const parent = this.parentElement;
+
+      if (!parent.querySelector(".image-fallback")) {
+
+        const fallback = document.createElement("div");
+
+        fallback.className = "image-fallback";
+
+        fallback.style.cssText = `
+          width:100%;
+          height:100%;
+          display:grid;
+          place-items:center;
+          color:#ffd600;
+          font-size:2.4rem;
+          background:
+          radial-gradient(circle at center,
+          rgba(20,100,255,.18),
+          transparent 60%),
+          #0b111c;
+        `;
+
+        fallback.innerHTML =
+          '<i class="fa-solid fa-car-side"></i>';
+
+        parent.appendChild(fallback);
+      }
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
